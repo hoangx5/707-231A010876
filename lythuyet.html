@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>LÝ THUYẾT</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>Nội Dung Lý Thuyết</header>
+    <!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài trả lời Lý thuyết Web</title>
+    <style>
+
+    </style>
+</head>
+<div class="box">
+<h2>1. position: absolute và relative</h2>
+
+<p><b>relative:</b> định vị tương đối so với chính nó, vẫn chiếm chỗ.</p>
+<p><b>absolute:</b> định vị tuyệt đối so với phần tử cha gần nhất có position.</p>
+
+<p><b>Ví dụ:</b></p>
+<code>
+.box { position: relative; top:20px; }
+</code>
+
+<code>
+.child { position: absolute; top:0; right:0; }
+</code>
+
+<p><b>Responsive:</b> relative dùng cho layout chính, absolute dùng cho icon, overlay.</p>
+
+<p><b>Deploy:</b> nếu dùng absolute nhiều dễ vỡ layout trên mobile.</p>
+</div>
+
+<div class="box">
+<h2>2. Domain, Hosting và DNS</h2>
+
+<p><b>Quy trình:</b></p>
+<ul>
+<li>Đăng ký domain</li>
+<li>Mua hosting</li>
+<li>Trỏ DNS</li>
+</ul>
+
+<p><b>DNS:</b> chuyển domain → IP server.</p>
+
+<p><b>Công cụ deploy:</b></p>
+<ul>
+<li>GitHub Pages</li>
+<li>Netlify</li>
+</ul>
+
+<p><b>Rủi ro:</b></p>
+<ul>
+<li>Bị hack DNS</li>
+<li>Không có HTTPS</li>
+<li>Lộ API key</li>
+</ul>
+</div>
+
+<div class="box">
+<h2>3. let, const, var</h2>
+
+<p><b>var:</b> function scope, dễ lỗi</p>
+<p><b>let:</b> block scope</p>
+<p><b>const:</b> không đổi giá trị</p>
+
+<p><b>Ví dụ lỗi:</b></p>
+<code>
+for (var i=0;i<3;i++){
+ setTimeout(()=>console.log(i),1000);
+}
+</code>
+
+<p>Kết quả: 3 3 3 (sai)</p>
+
+<p><b>Fix:</b></p>
+<code>
+for (let i=0;i<3;i++){
+ setTimeout(()=>console.log(i),1000);
+}
+</code>
+
+<p><b>Debug:</b> dùng Chrome DevTools (F12)</p>
+</div>
+
+<div class="box">
+<h2>4. Event Delegation</h2>
+
+<p>Gắn event vào phần tử cha thay vì từng phần tử con.</p>
+
+<p><b>Ví dụ:</b></p>
+<code>
+document.getElementById("list").addEventListener("click", function(e){
+ if(e.target.tagName==="LI"){
+  alert(e.target.innerText);
+ }
+});
+</code>
+
+<p><b>Lợi ích:</b></p>
+<ul>
+<li>Tăng hiệu suất</li>
+<li>Hỗ trợ phần tử động</li>
+<li>Code gọn</li>
+</ul>
+
+</div>
+</body>
+</html>
